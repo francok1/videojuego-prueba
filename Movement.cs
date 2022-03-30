@@ -16,9 +16,11 @@ public class Movement : MonoBehaviour
     
     void Update()
     {
-        Hor = Input.GetAxis("Horizontal") + velocidad * Time.deltaTime;
+        Hor = Input.GetAxis("Horizontal") * velocidad * Time.deltaTime;
         this.transform.Translate(Hor, 0,0);
         anim.SetFloat("velocidad", Mathf.Abs(Hor));
+    
+        Scale();
     }
 
     void Scale()
